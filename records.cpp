@@ -14,6 +14,16 @@ string Student::get_name()
 {
 	return name;
 }
+float Student::get_gpa(vector<Grade>& grades)
+{
+	float grades_size = grades.size();
+	float grade_total = 0.0f;
+	for (Grade& x : grades)
+	{
+		grade_total += (float)x.get_grade();
+	}
+	return grade_total / grades_size;
+}
 
 Course::Course(int the_id, string the_name, unsigned char the_credits)
 {

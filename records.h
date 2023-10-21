@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 class Student
 {
@@ -12,6 +13,7 @@ public:
 	Student(int the_id, std::string the_name);
 	int get_id();
 	std::string get_name();
+	float get_gpa(vector<Grade>& grades);
 };
 
 class Course
