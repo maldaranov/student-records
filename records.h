@@ -60,5 +60,7 @@ public:
 	void add_grade(int, int, unsigned char);
 	std::string get_student_name(int);
 	unsigned char get_course_credits(int);
+	std::string get_course_name(int);
 	float get_gpa(int);
+	void print_report(int student_id);
 };

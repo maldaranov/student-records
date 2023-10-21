@@ -106,6 +106,16 @@ unsigned char StudentRecords::get_course_credits(int course_id)
 		}
 	}
 }
+string StudentRecords::get_course_name(int course_id)
+{
+	for (auto& x : courses)
+	{
+		if (x.get_id() == course_id)
+		{
+			return x.get_name();
+		}
+	}
+}
 float StudentRecords::get_gpa(int student_id)
 {
 	float points = 0.0f, credits = 0.0f;
@@ -119,4 +129,16 @@ float StudentRecords::get_gpa(int student_id)
 		}
 	}
 	return points / credits;
+}
+void StudentRecords::print_report(int student_id)
+{
+	cout << endl << "Report card for " << get_student_name(student_id) << "." << endl;
+	for (auto& x : grades)
+	{
+		if (x.get_student_id() == student_id)
+		{
+			cout << get_course_name(x.get_course_id()) << ": " << x.get_grade() << endl;
+		}
+	}
+	cout << "GPA: " << get_gpa(student_id) << endl;
 }

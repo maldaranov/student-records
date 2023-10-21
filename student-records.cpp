@@ -9,9 +9,12 @@ int main()
 {
 	int id;
 	initialize_records();
+	/*
 	cout << "To lookup student's GPA, please enter the name of the student: ";
 	cin >> id;
 	cout << "The GPA for " << record_1.get_student_name(id) << " is " << record_1.get_gpa(id) << endl;
+	*/
+	record_1.print_report(1);
 	return (0);
 }
 
