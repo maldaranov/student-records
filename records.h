@@ -7,6 +7,7 @@
 class Student;
 class Course;
 class Grade;
+class StudentRecords;
 
 class Student
 {
@@ -45,4 +46,20 @@ public:
 	int get_student_id();
 	int get_course_id();
 	unsigned char get_grade();
+};
+
+class StudentRecords
+{
+private:
+	std::vector<Student> students;
+	std::vector<Course> courses;
+	std::vector<Grade> grades;
+	float get_numeric_grade(unsigned char);
+public:
+	void add_student(int, std::string);
+	void add_course(int, std::string, unsigned char);
+	void add_grade(int, int, unsigned char);
+	std::string get_student_name(int);
+	unsigned char get_course_credits(int);
+	float get_gpa(int);
 };
