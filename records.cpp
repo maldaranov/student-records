@@ -106,3 +106,17 @@ unsigned char StudentRecords::get_course_credits(int course_id)
 		}
 	}
 }
+float StudentRecords::get_gpa(int student_id)
+{
+	float points = 0.0f, credits = 0.0f;
+	for (auto& x : grades)
+	{
+		if (x.get_student_id() == student_id)
+		{
+			unsigned char tmp_credits = get_course_credits(x.get_course_id());
+			credits += tmp_credits;
+			points += get_numeric_grade(x.get_grade()) * tmp_credits;
+		}
+	}
+	return points / credits;
+}
