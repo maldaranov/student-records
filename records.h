@@ -13,3 +13,11 @@ public:
 	int get_id();
 	std::string get_name();
 };
+
+class Course
+{
+private:
+	int id;
+	std::string name;
+	unsigned char credits;
+};
