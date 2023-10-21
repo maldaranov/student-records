@@ -34,7 +34,7 @@ private:
 	int course_id;
 	unsigned char grade;
 public:
-	Grade(int the_student_id, int the course_id, unsigned char the_grade);
+	Grade(int the_student_id, int the_course_id, unsigned char the_grade);
 	int get_student_id();
 	int get_course_id();
 	unsigned char get_grade();
