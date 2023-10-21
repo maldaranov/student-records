@@ -14,47 +14,6 @@ string Student::get_name()
 {
 	return name;
 }
-float Student::get_gpa(vector<Grade>& grades, vector<Course>& courses)
-{
-	float credits = 0.0f;
-	float points = 0.0f;
-	for (auto& x : grades)
-	{
-		if (x.get_student_id() == id)
-		{
-			float numeric_grade;
-			// extract the numeric grade
-			switch (x.get_grade())
-			{
-			case 'A':
-				numeric_grade = 4.0f;
-				break;
-			case 'B':
-				numeric_grade = 3.0f;
-				break;
-			case 'C':
-				numeric_grade = 2.0f;
-				break;
-			case 'D':
-				numeric_grade = 1.0f;
-				break;
-			default:
-				numeric_grade = 0.0f;
-				break;
-			};
-			
-			for (auto& y : courses)
-			{
-				if (y.get_id() == x.get_course_id())
-				{
-					credits += y.get_credits();
-					points += numeric_grade * y.get_credits();
-				}
-			}
-		}
-	}
-	return points / credits;
-}
 
 Course::Course(int the_id, string the_name, unsigned char the_credits)
 {
@@ -92,4 +51,58 @@ int Grade::get_course_id()
 unsigned char Grade::get_grade()
 {
 	return grade;
+}
+
+void StudentRecords::add_student(int student_id, string student_name)
+{
+	students.push_back(Student(student_id, student_name));
+}
+void StudentRecords::add_course(int course_id, string course_name, unsigned char credits)
+{
+	courses.push_back(Course(course_id, course_name, credits));
+}
+void StudentRecords::add_grade(int student_id, int course_id, unsigned char grade)
+{
+	grades.push_back(Grade(student_id, course_id, grade));
+}
+float StudentRecords::get_numeric_grade(unsigned char grade)
+{
+	switch (grade)
+	{
+	case 'A':
+		return 4.0f;
+		break;
+	case 'B':
+		return 3.0f;
+		break;
+	case 'C':
+		return 2.0f;
+		break;
+	case 'D':
+		return 1.0f;
+		break;
+	default:
+		return 0.0f;
+		break;
+	};
+}
+string StudentRecords::get_student_name(int student_id)
+{
+	for (auto& x : students)
+	{
+		if (x.get_id() == student_id)
+		{
+			return x.get_name();
+		}
+	}
+}
+unsigned char StudentRecords::get_course_credits(int course_id)
+{
+	for (auto& x : courses)
+	{
+		if (x.get_id() == course_id)
+		{
+			return x.get_credits();
+		}
+	}
 }
