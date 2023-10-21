@@ -14,15 +14,46 @@ string Student::get_name()
 {
 	return name;
 }
-float Student::get_gpa(vector<Grade>& grades)
+float Student::get_gpa(vector<Grade>& grades, vector<Course>& courses)
 {
-	float grades_size = grades.size();
-	float grade_total = 0.0f;
-	for (Grade& x : grades)
+	float credits = 0.0f;
+	float points = 0.0f;
+	for (auto& x : grades)
 	{
-		grade_total += (float)x.get_grade();
+		if (x.get_student_id() == id)
+		{
+			float numeric_grade;
+			// extract the numeric grade
+			switch (x.get_grade())
+			{
+			case 'A':
+				numeric_grade = 4.0f;
+				break;
+			case 'B':
+				numeric_grade = 3.0f;
+				break;
+			case 'C':
+				numeric_grade = 2.0f;
+				break;
+			case 'D':
+				numeric_grade = 1.0f;
+				break;
+			default:
+				numeric_grade = 0.0f;
+				break;
+			};
+			
+			for (auto& y : courses)
+			{
+				if (y.get_id() == x.get_course_id())
+				{
+					credits += y.get_credits();
+					points += numeric_grade * y.get_credits();
+				}
+			}
+		}
 	}
-	return grade_total / grades_size;
+	return points / credits;
 }
 
 Course::Course(int the_id, string the_name, unsigned char the_credits)
