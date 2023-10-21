@@ -20,4 +20,22 @@ private:
 	int id;
 	std::string name;
 	unsigned char credits;
+public:
+	Course(int the_id, std::string the_name, unsigned char the_credits);
+	int get_id();
+	std::string get_name();
+	int get_credits();
+};
+
+class Grade
+{
+private:
+	int student_id;
+	int course_id;
+	unsigned char grade;
+public:
+	Grade(int the_student_id, int the course_id, unsigned char the_grade);
+	int get_student_id();
+	int get_course_id();
+	unsigned char get_grade();
 };
