@@ -63,4 +63,5 @@ public:
 	std::string get_course_name(int);
 	float get_gpa(int);
 	void print_report(int student_id);
+	void print_students();
 };

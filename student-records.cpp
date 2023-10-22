@@ -3,15 +3,16 @@
 #include "records.h"
 using namespace std;
 
-void read_records(StudentRecords sr);
+void read_records(StudentRecords &sr);
 StudentRecords sr;
 int main()
 {
 	read_records(sr);
+	sr.print_students();
 	return (0);
 }
 
-void read_records(StudentRecords sr)
+void read_records(StudentRecords &sr)
 {
 	ifstream ifp;
 

@@ -142,3 +142,11 @@ void StudentRecords::print_report(int student_id)
 	}
 	cout << "GPA: " << get_gpa(student_id) << endl;
 }
+void StudentRecords::print_students()
+{
+	cout << "Student List: " << endl;
+	for (auto& x : students)
+	{
+		cout << x.get_name() << endl;
+	}
+}
