@@ -1,37 +1,81 @@
 #include <iostream>
+#include <fstream>
 #include "records.h"
 using namespace std;
 
-void initialize_records();
-StudentRecords record_1;
-
+void read_records(StudentRecords sr);
+StudentRecords sr;
 int main()
 {
-	int id;
-	initialize_records();
-	/*
-	cout << "To lookup student's GPA, please enter the name of the student: ";
-	cin >> id;
-	cout << "The GPA for " << record_1.get_student_name(id) << " is " << record_1.get_gpa(id) << endl;
-	*/
-	record_1.print_report(1);
+	read_records(sr);
 	return (0);
 }
 
-void initialize_records()
+void read_records(StudentRecords sr)
 {
-	record_1.add_student(1, "John Smith");
-	record_1.add_student(2, "Peter Parker");
+	ifstream ifp;
 
-	record_1.add_course(1, "Algebra", 5);
-	record_1.add_course(2, "Physics", 4);
-	record_1.add_course(3, "English", 3);
-	record_1.add_course(4, "Economics", 4);
+	// read the student records
+	ifp.open("students.txt");
+	if (ifp.fail())
+	{
+		cout << "Failed to open the file!" << endl;
+	}
+	else
+	{
+		string student_id;
+		string student_name;
+		while (!ifp.eof())
+		{
+			getline(ifp, student_id);
+			getline(ifp, student_name);
+			sr.add_student(stoi(student_id), student_name);
+		}
+	}
+	ifp.close();
+	ifp.clear();
 
-	record_1.add_grade(1, 1, 'B');
-	record_1.add_grade(1, 2, 'A');
-	record_1.add_grade(1, 3, 'C');
-	record_1.add_grade(2, 1, 'A');
-	record_1.add_grade(2, 2, 'A');
-	record_1.add_grade(2, 4, 'B');
+	// read the course records
+	ifp.open("courses.txt");
+	if (ifp.fail())
+	{
+		cout << "Failed to open the file!" << endl;
+	}
+	else
+	{
+		string course_id;
+		string course_name;
+		string credits;
+		while (!ifp.eof())
+		{
+			getline(ifp, course_id);
+			getline(ifp, course_name);
+			getline(ifp, credits);
+			sr.add_course(stoi(course_id), course_name, (unsigned char)(credits[0]));
+		}
+	}
+	ifp.close();
+	ifp.clear();
+
+	// read the grade records
+	ifp.open("grades.txt");
+	if (ifp.fail())
+	{
+		cout << "Failed to open the file!" << endl;
+	}
+	else
+	{
+		string student_id;
+		string course_id;
+		string grade;
+		while (!ifp.eof())
+		{
+			getline(ifp, student_id);
+			getline(ifp, course_id);
+			getline(ifp, grade);
+			sr.add_grade(stoi(student_id), stoi(course_id), (unsigned char)(grade[0]));
+		}
+	}
+	ifp.close();
+	ifp.clear();
 }
