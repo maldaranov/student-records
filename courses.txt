@@ -1,5 +1,5 @@
 1
-Algebra
+Algebra 1
 5
 2
 Physics
@@ -10,3 +10,36 @@ English
 4
 Economics
 4
+5
+Discrete Structures
+4
+6
+Animation
+3
+7
+Government
+3
+8
+Database Design
+3
+9
+Computer Science II
+4
+10
+Chemistry
+3
+11
+Biology
+3
+12
+Statistics
+3
+13
+Geometry
+3
+14
+Electronics
+4
+15
+American History
+3
