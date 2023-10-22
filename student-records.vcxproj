@@ -133,6 +133,11 @@
   <ItemGroup>
     <ClInclude Include="records.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="C:\Users\maxim\Desktop\courses.txt" />
+    <Text Include="C:\Users\maxim\Desktop\grades.txt" />
+    <Text Include="C:\Users\maxim\Desktop\students.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

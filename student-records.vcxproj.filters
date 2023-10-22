@@ -27,4 +27,15 @@
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="C:\Users\maxim\Desktop\grades.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="C:\Users\maxim\Desktop\students.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="C:\Users\maxim\Desktop\courses.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
