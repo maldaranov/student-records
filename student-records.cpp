@@ -9,6 +9,7 @@ int main()
 {
 	read_records(sr);
 	sr.print_students();
+	sr.print_courses();
 	return (0);
 }
 

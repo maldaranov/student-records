@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 class Student;
 class Course;
@@ -64,4 +65,5 @@ public:
 	float get_gpa(int);
 	void print_report(int student_id);
 	void print_students();
+	void print_courses();
 };

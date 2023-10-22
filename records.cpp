@@ -150,3 +150,16 @@ void StudentRecords::print_students()
 		cout << x.get_name() << endl;
 	}
 }
+void StudentRecords::print_courses()
+{
+	cout << "Course List: " << endl;
+	cout << setw(5) << left << "ID" <<
+			setw(25) << left << "Course Name" <<
+			setw(15) << left << "Course Credits" << endl;
+	for (auto& x : courses)
+	{
+		cout << setw(5) << left << x.get_id() <<
+				setw(25) << left << x.get_name() <<
+				setw(15) << left << x.get_credits() << endl;
+	}
+}
