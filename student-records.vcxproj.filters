@@ -28,13 +28,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="C:\Users\maxim\Desktop\grades.txt">
+    <Text Include="courses.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="C:\Users\maxim\Desktop\students.txt">
+    <Text Include="grades.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="C:\Users\maxim\Desktop\courses.txt">
+    <Text Include="students.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
