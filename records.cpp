@@ -29,7 +29,7 @@ string Course::get_name()
 {
 	return name;
 }
-int Course::get_credits()
+unsigned char Course::get_credits()
 {
 	return credits;
 }

@@ -32,7 +32,7 @@ public:
 	Course(int the_id, std::string the_name, unsigned char the_credits);
 	int get_id();
 	std::string get_name();
-	int get_credits();
+	unsigned char get_credits();
 };
 
 class Grade
