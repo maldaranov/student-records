@@ -11,6 +11,7 @@ int main()
 	sr.print_students();
 	sr.print_courses();
 	sr.print_grades();
+	sr.print_report(5);
 	return (0);
 }
 
