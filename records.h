@@ -66,4 +66,5 @@ public:
 	void print_report(int student_id);
 	void print_students();
 	void print_courses();
+	void print_grades();
 };

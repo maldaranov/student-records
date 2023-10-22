@@ -4,14 +4,13 @@
 using namespace std;
 
 void read_records(StudentRecords &sr);
-void read_courses(StudentRecords& sr);
 StudentRecords sr;
 int main()
 {
-	ifstream ifp;
 	read_records(sr);
 	sr.print_students();
 	sr.print_courses();
+	sr.print_grades();
 	return (0);
 }
 

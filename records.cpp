@@ -149,6 +149,7 @@ void StudentRecords::print_students()
 	{
 		cout << x.get_name() << endl;
 	}
+	cout << endl;
 }
 void StudentRecords::print_courses()
 {
@@ -162,4 +163,19 @@ void StudentRecords::print_courses()
 				setw(25) << left << x.get_name() <<
 				setw(15) << left << x.get_credits() << endl;
 	}
+	cout << endl;
+}
+void StudentRecords::print_grades()
+{
+	cout << "Grades: " << endl;
+	cout << setw(15) << left << "Student ID" <<
+			setw(15) << left << "Course ID" <<
+			setw(15) << left << "Letter Grade" << endl;
+	for (auto& x : grades)
+	{
+		cout << setw(15) << left << x.get_student_id() <<
+				setw(15) << left << x.get_course_id() <<
+				setw(15) << left << x.get_grade() << endl;
+	}
+	cout << endl;
 }
